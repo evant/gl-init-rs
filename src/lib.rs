@@ -31,6 +31,8 @@ use win32 as winimpl;
 use x11 as winimpl;
 #[cfg(target_os = "macos")]
 use osx as winimpl;
+#[cfg(target_os = "emscripten")]
+use emscripten as winimpl;
 
 #[cfg(target_os = "windows")]
 mod win32;
@@ -38,6 +40,8 @@ mod win32;
 mod x11;
 #[cfg(target_os = "macos")]
 mod osx;
+#[cfg(target_os = "emscripten")]
+mod emscripten;
 
 #[allow(dead_code)]
 //mod egl;
